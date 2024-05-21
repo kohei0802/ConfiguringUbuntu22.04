@@ -56,5 +56,27 @@ because of this. Therefore, one can fix either Ubuntu or Windows to let one conf
 I changed the Ubuntu's hardware clock setting to local time by:
 sudo timedatectl set-local-rtc 1 
 
+May21 Note-4
+
+Allocating and unallocating disk space for Windows and Ubuntu
+
+In Ubuntu, the tool to use is GParted. 
+
+In Windows, surprisingly, it is okay to shrink the C partition without deleting system and program files. Modern OS knows how to handle the complicated operations 
+and ensure the data is not deleted. This is true as long as you are not shrinking the partition smaller than or almost equal to the size of the data stored in it. 
+
+My allocation of memory (500GB) is the following: 
+
+Windows ~300GB
+Unallocated ~100GB
+Ubuntu ~100GB
+
+Since the unallocated is adjacent to both Windows and Ubuntu partition, it can be allocated to these two OS easily. 
+
+If these partitions are not adjacent, I can also use tools like Aomei to reorder the partitions. 
+
+https://answers.microsoft.com/en-us/windows/forum/all/cannot-extend-volume-greyed-out-to-merge/4b02823b-c67a-44a9-9095-46b7d2ff0598
+
+
 
 
