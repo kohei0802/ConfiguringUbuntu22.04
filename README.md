@@ -31,4 +31,30 @@ sudo umount /mnt/usbmem
 
 replace "sdb1" with the device name of the USB. 
 
-USB device name 
+USB device name is usually in the format of "sdx". 'x' can be 'a', 'b', etc.
+Internal HDD also has its dev name in the format of "sdx". The name "sd" came from the SATA connection that HDD has with the motherboard. 
+USB uses USB3.0 or other standards instead of SATA/NVMe, but because it behaves just like any other external block storage device connected,USB is named "sdx". 
+In contrast, Internal SSD uses NVMe. That's why it's device name is in the format of "nvme_specific ID". 
+However, if the SSD is external and connected via USB, it will probably be assigned a "nmve" type of dev name. 
+
+The above commands has the following effect: 
+Unmount the usb device from the default mount point to format it into FAT in the next command. 
+Create a directory "/mnt/usbmem", to which the usb will be mounted. 
+Create EFI/BOOT in the root directory (?) of the USB and put the EFI program in it, so that the EFI program is loaded when the USB partition containing
+the EFI/BOOT directory is booted. 
+Finally, unmount the device to safely remove the USB flash drive. 
+
+May21 Note-3
+
+Changing the time setting of Ubuntu
+
+Issue of dual-booting Windows11 and Ubuntu22.04. https://askubuntu.com/questions/869639/windows-time-jumps-a-few-hours-forward-after-using-ubuntu
+
+Ubuntu set the hardware clock (BIOS) to UTC. However, Windows11 use the local time. When I boot back from Ubuntu to Windows, the time displayed in Windows is affected 
+because of this. Therefore, one can fix either Ubuntu or Windows to let one conform the other. 
+
+I changed the Ubuntu's hardware clock setting to local time by:
+sudo timedatectl set-local-rtc 1 
+
+
+
