@@ -141,6 +141,10 @@ https://www.baeldung.com/maven-java-version
 Java 1.8 <=> Java 8
 Java 1.7 <=> Java 7
 
+JUnit in Spring
+Surefire plugin is used (?). Can run "mvn test" or just "mvn install", etc.
+It helps maven find all XXXTest.java and @test in it to test.
+
 
 
 
