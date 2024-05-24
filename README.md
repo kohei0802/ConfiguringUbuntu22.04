@@ -77,6 +77,33 @@ If these partitions are not adjacent, I can also use tools like Aomei to reorder
 
 https://answers.microsoft.com/en-us/windows/forum/all/cannot-extend-volume-greyed-out-to-merge/4b02823b-c67a-44a9-9095-46b7d2ff0598
 
+May24 Note-1
 
+Important Java Spring Web development related links/terminologies
 
+Maven Plugins to make executable jar and copy dependency to other projects
+https://mkyong.com/maven/how-to-create-a-manifest-file-with-maven/
+
+Maven transitive dependency. 
+Conflicts should be solved by specifying a version. Use Maven analyze tools to find redundant dependencies and exclude them.'
+
+Maven installation guide on Ubuntu 22.04 
+https://vegastack.com/tutorials/how-to-install-maven-on-ubuntu-22-04/
+
+Class path 
+Classes (usually packed in jar) required by your project. If the project is small, you can specify it in CLI during built and run.
+In Maven, the dependency artifacts themselves are the indicators of class paths. 
+
+Manifest
+A text file included in every JAR that provides metadata about the contents. One commonly used attribute is Class-Path, which lists additional JARs/classpaths required to run the code in that JAR.
+
+Maven scopes
+Compile, runtime, test, system, provided
+https://www.baeldung.com/maven-dependency-scopes
+
+addClasspath
+You can use addClasspath like <addClasspath>true</addClasspath> to make dependencies even in "test" and "provided" to be included in the manifest. 
+
+Mockito
+Generate dummy data to be used in testing
 
