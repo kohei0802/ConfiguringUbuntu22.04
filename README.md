@@ -108,6 +108,39 @@ Mockito
 Generate dummy data to be used in testing
 
 Maven Wrappers
-You just run "mvnw"
+https://www.baeldung.com/maven-wrapper
+You just run "mvnw".
+Set-up: 
+"mvn -N wrapper:wrapper".
+Set-up with version:
+"mvn -N wrapper:wrapper -Dmaven=3.5.2"
+Check maven version used:
+"./mvnw --version"
+
+Dynamically loaded class
+Not compiled into bytes codes but is used during runtime
+
+~/.m2/repository
+maven checks file size and checksum to see if the dependency downloaded is complete or not; Thus, we don't need to worry.
+
+maven goals and lifecycles
+Actions taken by maven such as "compile" and "test". If I run maven package, the following life cycle takes place:
+(probably) validate -> compile -> test -> package into jar
+
+maven groupId and artifactId vs import statement
+"groupId" usually indicates the organization. It is used to indicate a repository on the maven website. artifactId is a particular project made by the organization. 
+The import statement depends on the artifact, but not the groupId. 
+Check package structure by:
+"jar tvf /path/to/file.jar" or "jar xf /path/to/file.jar"
+"t" proably refers to "tree command"
+Error might occur if you try to import a class that only has "package-wide" scope.
+"Cannot find symbol" error.
+
+Maven compiler plugins
+https://www.baeldung.com/maven-java-version
+Java 1.8 <=> Java 8
+Java 1.7 <=> Java 7
+
+
 
 
